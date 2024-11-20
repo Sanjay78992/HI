@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-bottom: 2px solid #ccc;
+        }
+        .tab {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .tab:hover {
+            background-color: #ccc;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .active-tab {
+            background-color: #fff;
+            border-bottom: none;
+        }
+        .active-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <div id="tab1" class="tab active-tab" onclick="showContent(1)">Sanjay</div>
+        <div id="tab2" class="tab" onclick="showContent(2)">Sivakumar</div>
+    </div>
+
+    <div id="content1" class="tab-content active-content">
+        <p>Sanjay is Sivakumar's son and the G.O.A.T.</p>
+    </div>
+    
+    <div id="content2" class="tab-content">
+        <p>Sivakumar is the father of Sanjay and has a lot of cloths!</p>
+    </div>
+
+    <script>
+        function showContent(tabNumber) {
+            // Hide all content
+            var contentElements = document.querySelectorAll('.tab-content');
+            contentElements.forEach(function(content) {
+                content.classList.remove('active-content');
+            });
+
+            // Remove active class from all tabs
+            var tabElements = document.querySelectorAll('.tab');
+            tabElements.forEach(function(tab) {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show the content for the selected tab
+            document.getElementById('content' + tabNumber).classList.add('active-content');
+            document.getElementById('tab' + tabNumber).classList.add('active-tab');
+        }
+    </script>
+
+</body>
+</html>
