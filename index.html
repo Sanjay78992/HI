@@ -6,14 +6,23 @@
     <title>Tab Example</title>
     <style>
         body {
-            font-family: Pacifco, sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: purple; /* Purple background color */
+            background-image: url('https://www.example.com/image.jpg'); /* Replace this with the URL of your image */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Don't repeat the image */
+            margin: 0;
+            padding: 0;
         }
         .tabs {
             display: flex;
             cursor: pointer;
             padding: 10px;
-            background-color: #f1f1f1;
+            background-color: rgba(241, 241, 241, 0.8); /* Slight transparency */
             border-bottom: 2px solid #ccc;
+            margin: 20px;
+            border-radius: 10px;
         }
         .tab {
             padding: 10px 20px;
@@ -28,9 +37,11 @@
         .tab-content {
             display: none;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: rgba(249, 249, 249, 0.8); /* Slight transparency */
             border: 1px solid #ccc;
             border-top: none;
+            margin: 20px;
+            border-radius: 10px;
         }
         .active-tab {
             background-color: #fff;
@@ -45,15 +56,15 @@
 
     <div class="tabs">
         <div id="tab1" class="tab active-tab" onclick="showContent(1)">Sanjay</div>
-        <div id= "tab2" class="tab" onclick="showcontent(2">Sivakumar</div>
+        <div id="tab2" class="tab" onclick="showContent(2)">Sivakumar</div>
     </div>
 
     <div id="content1" class="tab-content active-content">
-        <p>Sanjay is Sivakumar's and he is the best!!</p>
+        <p>Sanjay is Sivakumar's son and the G.O.A.T.</p>
     </div>
     
     <div id="content2" class="tab-content">
-        <p>Sivakumar is the father of Sanjay and has a lot of cloths plus a house called a house!!</p>
+        <p>Sivakumar is the father of Sanjay and has a lot of cloths!</p>
     </div>
 
     <script>
